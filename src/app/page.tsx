@@ -1,113 +1,133 @@
 import Image from "next/image";
+import "./home.css";
+
+import Navigasi from "../../component/navigasi";
+import mainImage from "../../public/theweekend.png";
+import likeIcon from "../../public/like icon.svg";
+import brunoMars from "../../public/24k magic.webp";
+import chaseAtlantic from "../../public/Chase Atlantic.png";
+import joji from "../../public/joji.png";
+import sza from "../../public/SOS album by Sza 1.png";
+import theWeekend from "../../public/abel.png";
+import brunoMars2 from "../../public/bruno mars.png"; 
+import lany from "../../public/lany.png"; 
+import the1975 from "../../public/the 1975.png"
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
+    <div>
+      <Navigasi />
+      <div className="wraphome">
+        <div className="mainhome">
+          <div className="mainhomeleft">
+            <p>Trending New Hist</p>
+            <h1>Versace On The Floor</h1>
+            <div className="artistname">
+              <h1>Bruno Mars</h1>
+              <p>63 Millions Follow</p>
+            </div>
+            <div className="listenow">
+              <button>Listen Now</button>
+              <div className="border_like">
+                <Image
+                  src={likeIcon}
+                  width={25}
+                  height={25}
+                  alt="Picture of the author"
+                />
+              </div>
+            </div>
+          </div>
+          <div className="mainhomeright">
             <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
+              src={brunoMars}
+              width={200}
+              height={200}
+              alt="Picture of the author"
             />
-          </a>
+          </div>
+        </div>
+        <div className="mainhomemusic">
+          <div className="mainhomemusicleft">
+            <div className="wrap_top_artis">
+              <div className="top_artis">
+                <p>Top Artis</p>
+                <p>See All</p>
+              </div>
+              <div className="top_artis_image ">
+                <div className="rounded-full">
+                  <Image
+                    src={theWeekend}
+                    width={60}
+                    height={60}
+                    alt="Picture of the author"
+                  />
+                  <h1>The Weekend</h1>
+                </div>
+                <div className="chaseAtlantic">
+                  <Image
+                    src={chaseAtlantic}
+                    width={60}
+                    height={60}
+                    alt="Picture of the author"
+                  />
+                  <h1>Chase Atlantic</h1>
+                </div>
+                <div className="sza">
+                  <Image
+                    src={sza}
+                    width={60}
+                    height={60}
+                    alt="Picture of the author"
+                  />
+                  <h1>Sza</h1>
+                </div>
+                <div className="backstreet  ">
+                  <Image
+                    src={joji}
+                    width={60}
+                    height={60}
+                    alt="Picture of the author"
+                  />
+                  <h1>Joji</h1>
+                </div>
+                <div className="backstreet  ">
+                  <Image
+                    src={brunoMars2}
+                    width={60}
+                    height={60}
+                    alt="Picture of the author"
+                  />
+                  <h1>Bruno Mard</h1>
+                </div>
+                <div className="backstreet  ">
+                  <Image
+                    src={lany}
+                    width={60}
+                    height={60}
+                    alt="Picture of the author"
+                  />
+                  <h1>Lany</h1>
+                </div>
+                <div className="backstreet  ">
+                  <Image
+                    src={the1975}
+                    width={60}
+                    height={60}
+                    alt="Picture of the author"
+                  />
+                  <h1>The 1975</h1>
+                </div>
+              </div>
+            </div>
+            <div className="wrap_genre"></div>
+            <div className="wrap_chart"></div>
+          </div>
+          <div className="mainhomemusicright">
+            <div className="playmusic"></div>
+          </div>
         </div>
       </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+    </div>
   );
 }
