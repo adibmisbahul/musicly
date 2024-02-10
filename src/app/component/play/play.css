@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+/* * {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+} */
+
+:root {
+  --tagsBackground: #9440f3;
+  --tagsText: #ffffff;
+  --tagsBackgroundHoverActive: #2cc0a0;
+  --tagsTextHoverActive: #ffffff;
+  --searchBackground: #18191f;
+  --searchText: #ffffff;
+  --searchPlaceHolder: #575a77;
+  --playerBackground: #202026;
+  --titleColor: #ffffff;
+  --timeColor: #ffffff;
+  --progressSlider: #9440f3;
+  --progressUsed: #ffffff;
+  --progressLeft: #151616;
+  --bufferLoaded: #202222;
+  --volumeSlider: #9440f3;
+  --volumeUsed: #ffffff;
+  --volumeLeft: #151616;
+  --playlistBackground: #18191f;
+  --playlistText: #575a77;
+  --playlistBackgroundHoverActive: #18191f;
+  --playlistTextHoverActive: #ffffff;
+}
+
+
+
+
+/* ////////////////////////////////css home /////////////////////// */
+.wraphome{
+  margin-left: 18%;
+  width: 82%;
+  height: 85vh;
+  margin-top: 5vh;
+  overflow-y: scroll;
+}
+
+#style-1::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 1vw;
+	background-color: #F5F5F5;
+}
+
+#style-1::-webkit-scrollbar
+{
+	width: 12px;
+  border-radius: 1vw;
+	background-color: #F5F5F5;
+}
+
+#style-1::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #555;
+}
+
+.mainhome{
+  width: 100%;
+  height: auto;
+  display: flex;
+}
+
+.mainhomeleft{
+  width: 70%;
+}
+ 
+.mainhomeleft p {
+  padding-top: 2vh;
+}
+
+.mainhomeleft h1{ 
+  font-size:4vw;
+  font-weight: bold;
+}
+
+.artistname{
+  width: 50vw;
+  height: 5vh;
+  display: flex;
+  gap: 2vw;
+  align-items: center;
+}
+
+.artistname h1{
+  font-size: 2vw;
+  font-weight: 500;
+}
+
+.artistname p {
+  margin-top: -1vw;
+  font-size:medium;
+  color: grey;
+}
+
+.listenow{
+  margin-top: 2vh;
+  display: flex;
+  gap: 2vw;
+}
+
+.listenow button{
+  width: 8vw;
+  height: 5vh;
+  font-size: small;
+  border-radius: 2vw;
+  background-color: #5773ff;
+}
+
+.border_like{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  width: 5vh;
+  height: 5vh;
+  border-radius: 100%;
+  border: solid white 1px;
+  background-color: none;
+}
+
+.mainhomemusic{
+  margin-top: 2vh;
+  width: 100%;
+  gap: 1vw;
+  height: auto;
+  display: flex;
+}
+
+.mainhomemusicleft{
+  width: 65%;
+  gap: 0.5vw;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.wrap_top_artis{
+  width: 100%;
+  height: 15vh;
+  border-radius: 0.5vw;
+  background-color: #202026;
+  justify-content: center;
+  align-items: center;
+}
+
+.mainhomemusicright{
+  width: 35%;
+}
+
+.top_artis{
+  width: 80%;
+  padding: 0.5vw;
+  margin-left: 10%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.top_artis_image{
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  gap: 2vw;
+  text-align: center;
+}
+
+
+.top_artis_image h1{
+  font-size:x-small;
+}
+
+.top_artis_image .sza{
+  border-radius: 100%;
+}
+
+.top_artis_image .the_weekend{
+  border-radius: 100%;
+  width: auto;
+  height: auto;
+}
+
+.backstreet{
+  width: auto;
+  height: auto;
+}
+.playmusic{
+  width: 95%; 
+  height: 51vh;
+  border-radius: 0.5vw;
+  /* overflow-y: hidden; */
+  background-color: #202026;
+}
+
+.wrap_genre{
+  width: 50%;
+  height: 35vh;
+  border-radius: 0.5vw;
+  background-color: #202026;
+}
+
+.wrap_chart{
+  width: 49%;
+  height: 35vh;
+  border-radius: 0.5vw;
+  background-color: #202026;
+}
+
+.playmusic2{
+  width: 100%;
+  height: 10vh;
+  background-color: #5773ff;
+}

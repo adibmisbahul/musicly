@@ -1,0 +1,27 @@
+.item {
+  /* background-color: var(--playlistBackground); */
+  color: var(--playlistText);
+  text-align: center;
+  margin: 5px 0;
+  padding: 3px 0;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.imageArtis {
+  border-radius: 0.5vw;
+  margin-left: 1vw;
+  margin-top: 1vh;
+}
+
+.active {
+  color: var(--playlistTextHoverActive);
+  font-family: 'Quicksand', sans-serif;
+  font-size: 18px;
+}
+
+.item:hover {
+  color: var(--playlistTextHoverActive);
+}
