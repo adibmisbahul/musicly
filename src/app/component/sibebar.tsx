@@ -16,6 +16,11 @@ export default function sidebar() {
           />
           <h1>Musicly</h1>
         </div>
+        <div className="listmenu">
+          <ul>
+            <li>menu</li>
+            </ul>
+        </div>
       </div>
     </div>
   );

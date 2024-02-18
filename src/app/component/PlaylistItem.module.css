@@ -10,10 +10,19 @@
   font-family: 'Poppins', sans-serif;
 }
 
+.wrapplaylist{
+  display: flex;
+
+}
+
 .imageArtis {
   border-radius: 0.5vw;
   margin-left: 1vw;
   margin-top: 1vh;
+}
+
+.wrapplaylist .textdurasi{
+  margin-left: 5vw;
 }
 
 .active {
