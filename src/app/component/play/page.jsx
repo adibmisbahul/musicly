@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import "./play.css";
+import  "./play.css";
 import Image from "next/image";
 
 import { PageTemplate } from "../PageTemplate";
@@ -47,6 +47,7 @@ import lany from "../../assets/lany.png";
 
 import Navigasi from "../navigasi";
 import likeIcon from "../../../../public/like icon.svg";
+import { Abel } from "next/font/google";
 
 const fmtMSS = (s) => new Date(1000 * s).toISOString().substr(15, 4);
 
@@ -81,7 +82,16 @@ const tracks = [
   },
 ];
 
-const topArtis = [];
+const topArtis = [
+  {name:"The Weekend", Image:(theWeekend)},
+  {name:"Chase Atlantic", Image:(chaseAtlantic)},
+  {name:"Sza", Image:(sza)},
+  {name:"joji", Image:(joji)},
+  {name:"Bruno Mars", Image:(brunoMars2)},
+  {name:"Lany", Image:(lany)},
+  {name:"The 1975", Image:(the1975)},
+]
+
 
 const Player = ({
   trackList = tracks,

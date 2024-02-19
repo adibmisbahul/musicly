@@ -1,10 +1,10 @@
 import "./navbar.css";
 import Image from "next/image";
-
+import Link from "next/link";
 
 import SetingsIcon from "../../../public/setings icon.png";
 import NotifIcon from "../../../public/notif.png";
-import Avatar from "../../../public/avatar.jpeg"
+import Avatar from "../../../public/avatar.jpeg";
 import { Search } from "../component/Search";
 
 export default function navbar() {
@@ -34,14 +34,14 @@ export default function navbar() {
             />
           </div>
           <div className="avatar">
-          <Image
-          className="iavatar"
+            <Image
+              className="iavatar"
               src={Avatar}
               width={35}
               height={35}
               alt="Picture of the author"
             />
-            <h1>Adib Misbahul</h1>
+            <Link rel="stylesheet" href="http://localhost:5000/" >login</Link>
           </div>
         </div>
       </div>
