@@ -21,6 +21,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/component/topartis/topArtis.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/component/topartis/topArtis.jsx", "src/app/tester/page.jsx", "src/app/search/page.jsx"],
   "exclude": ["node_modules"]
 }

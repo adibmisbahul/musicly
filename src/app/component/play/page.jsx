@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import  "./play.css";
+import "./play.css";
 import Image from "next/image";
 
 import { PageTemplate } from "../PageTemplate";
@@ -24,15 +24,16 @@ import { Volume } from "../Volume";
 import { PlaylistTemplate } from "../PlaylistTemplate";
 import { PlaylistItem } from "../PlaylistItem";
 import { ImageArtis12 } from "../imageArtis";
+import ListItems from "../topartis/topArtis";
 
 import loopCurrentBtn from "../../icons/loop_current.png";
-import loopNoneBtn from "../../icons/loop_none.png";
+import loopNoneBtn from "../../icons/entypo--loop.svg";
 import previousBtn from "../../icons/previous.svg";
 import playButton from "../../icons/play.svg";
-import pauseBtn from "../../icons/pause.png";
+import pauseBtn from "../../icons/material-symbols-light--pause-outline.svg";
 import nextBtn from "../../icons/next.svg";
 import shuffleAllBtn from "../../icons/shuffle_all.png";
-import shuffleNoneBtn from "../../icons/shuffle_none.png";
+import shuffleNoneBtn from "../../icons/icon-park-outline--shuffle.svg";
 
 import the1975 from "../../assets/The1975.jpeg";
 import dadysHome from "../../assets/dadysHome.jpeg";
@@ -52,46 +53,45 @@ import { Abel } from "next/font/google";
 const fmtMSS = (s) => new Date(1000 * s).toISOString().substr(15, 4);
 
 const tracks = [
-  {
-    imageArtis: the1975,
-    url: "aboutYou.mp3",
-    title: "About You",
-    durasi: "5:23",
-    tags: ["house"],
-  },
+  // {
+  //   imageArtis: the1975,
+  //   url: "https://od.lk/s/NzJfNDQ4NTA5Nzhf/aboutYou.mp3",
+  //   title:"About You",
+  //   durasi: "5:23",
+  //   tags: ["house"],
+  // },
   {
     imageArtis: heaevenSent,
-    url: "heaventSent.mp3",
+    url: "https://drive.google.com/file/d/1az1I8RiN5-70imQ5fjEZ6QbPxOVS9RaW/view?usp=sharing",
     title: "Heaven Sent",
     durasi: "2:50",
     tags: ["dnb"],
   },
-  {
-    imageArtis: dadysHome,
-    url: "papahPulang.mp3",
-    title: "Dadys Home",
-    durasi: "4:12",
-    tags: ["dubstep"],
-  },
-  {
-    imageArtis: kmagic,
-    url: "versace on the floor.mp3",
-    title: "versace on the floor",
-    durasi: "5:36",
-    tags: ["dubstep"],
-  },
+  // {
+  //   imageArtis: dadysHome,
+  //   url: "https://od.lk/s/NzJfNDQ4NTA5Nzlf/papahPulang.mp3",
+  //   title: "Dadys Home",
+  //   durasi: "4:12",
+  //   tags: ["dubstep"],
+  // },
+  // {
+  //   imageArtis: kmagic,
+  //   url: "https://od.lk/s/NzJfNDQ4NTA5ODFf/versace%20on%20the%20floor.mp3",
+  //   title: "versace on the floor",
+  //   durasi: "5:36",
+  //   tags: ["dubstep"],
+  // },
 ];
 
 const topArtis = [
-  {name:"The Weekend", Image:(theWeekend)},
-  {name:"Chase Atlantic", Image:(chaseAtlantic)},
-  {name:"Sza", Image:(sza)},
-  {name:"joji", Image:(joji)},
-  {name:"Bruno Mars", Image:(brunoMars2)},
-  {name:"Lany", Image:(lany)},
-  {name:"The 1975", Image:(the1975)},
-]
-
+  { name: "The Weekend", Image: heaevenSent },
+  { name: "Chase Atlantic", Image: chaseAtlantic },
+  { name: "Sza", Image: sza },
+  { name: "joji", Image: joji },
+  { name: "Bruno Mars", Image: brunoMars2 },
+  { name: "Lany", Image: lany },
+  { name: "The 1975", Image: the1975 },
+];
 
 const Player = ({
   trackList = tracks,
@@ -388,69 +388,17 @@ const Player = ({
                   <p>See All</p>
                 </div>
                 <div className="top_artis_image ">
-                  <div className="rounded-full">
-                    <Image
-                      src={theWeekend}
-                      width={60}
-                      height={60}
-                      alt="Picture of the author"
-                    />
-                    <h1>The Weekend</h1>
-                  </div>
-                  <div className="chaseAtlantic">
-                    <Image
-                      src={chaseAtlantic}
-                      width={60}
-                      height={60}
-                      alt="Picture of the author"
-                    />
-                    <h1>Chase Atlantic</h1>
-                  </div>
-                  <div className="sza">
-                    <Image
-                      src={sza}
-                      width={60}
-                      height={60}
-                      alt="Picture of the author"
-                    />
-                    <h1>Sza</h1>
-                  </div>
-                  <div className="backstreet  ">
-                    <Image
-                      src={joji}
-                      width={60}
-                      height={60}
-                      alt="Picture of the author"
-                    />
-                    <h1>Joji</h1>
-                  </div>
-                  <div className="backstreet  ">
-                    <Image
-                      src={brunoMars2}
-                      width={60}
-                      height={60}
-                      alt="Picture of the author"
-                    />
-                    <h1>Bruno Mard</h1>
-                  </div>
-                  <div className="backstreet  ">
-                    <Image
-                      src={lany}
-                      width={60}
-                      height={60}
-                      alt="Picture of the author"
-                    />
-                    <h1>Lany</h1>
-                  </div>
-                  <div className="backstreet  ">
-                    <Image
-                      src={the1975}
-                      width={60}
-                      height={60}
-                      alt="Picture of the author"
-                    />
-                    <h1>The 1975</h1>
-                  </div>
+                  {/* <ListItems items={topArtis}/> */}
+                  {topArtis.map((q, w) => {
+                    return (
+                      <>
+                        <div>
+                          <Image src={q.Image} className="image_top" />
+                          <h1>{q.name}</h1>
+                        </div>
+                      </>
+                    );
+                  })}
                 </div>
               </div>
               <div className="wrap_genre">

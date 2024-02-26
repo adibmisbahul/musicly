@@ -1,5 +1,6 @@
 .tag {
-  background-color: var(--tagsBackground);
+  background-color: #5773ff;
+  /* background-color: var(--tagsBackground); */
   color: var(--tagsText);
   height: 40px;
   min-width: 100px;

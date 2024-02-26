@@ -1,0 +1,42 @@
+.wrapsidebar{
+    width: 100%;
+    height: 100vh;
+    background-color: #18181d;
+}
+
+.sidebarlogo{
+    display: flex;
+    justify-content: center;
+    gap: 1vw;
+    padding: 3vw;
+}
+
+.listmenu{
+    width: 100%;
+    height: auto;
+    display: flexbox;
+    text-align: center;
+    /* background-color: aqua; */
+}
+
+
+
+.tolink{
+    width: 100%;
+    height: 6vh;
+    /* background-color: aqua; */
+    justify-content: center;
+    align-items: center;
+    gap: 1vw;
+    display: flex;
+    /* gap: 2vh; */
+}
+
+.tolink:hover{
+    background-color: #5773ff;
+}
+
+.tolink a{
+    text-align: left;
+}
+

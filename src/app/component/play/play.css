@@ -178,14 +178,9 @@
   font-size:x-small;
 }
 
-.top_artis_image .sza{
+.image_top{
+  width: 60px;
   border-radius: 100%;
-}
-
-.top_artis_image .the_weekend{
-  border-radius: 100%;
-  width: auto;
-  height: auto;
 }
 
 .backstreet{
@@ -217,5 +212,5 @@
 .playmusic2{
   width: 100%;
   height: 10vh;
-  background-color: #5773ff;
+  /* background-color: #5773ff; */
 }
