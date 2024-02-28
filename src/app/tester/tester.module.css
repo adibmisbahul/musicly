@@ -1,0 +1,381 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+#style-3::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
+}
+
+#style-3::-webkit-scrollbar
+{
+	width: 6px;
+	background-color: #F5F5F5;
+}
+
+#style-3::-webkit-scrollbar-thumb
+{
+	background-color: #000000;
+}
+
+
+/* :root {
+  --tagsBackground: #9440f3;
+  --tagsText: #ffffff;
+  --tagsBackgroundHoverActive: #2cc0a0;
+  --tagsTextHoverActive: #ffffff;
+  --searchBackground: #18191f;
+  --searchText: #ffffff;
+  --searchPlaceHolder: #575a77;
+  --playerBackground: #202026;
+  --titleColor: #ffffff;
+  --timeColor: #ffffff;
+  --progressSlider: #9440f3;
+  --progressUsed: #ffffff;
+  --progressLeft: #151616;
+  --bufferLoaded: #202222;
+  --volumeSlider: #9440f3;
+  --volumeUsed: #ffffff;
+  --volumeLeft: #151616;
+  --playlistBackground: #18191f;
+  --playlistText: #575a77;
+  --playlistBackgroundHoverActive: #18191f;
+  --playlistTextHoverActive: #ffffff;
+}  */
+
+
+.wraptester{
+    width: 100%;
+    height: 100vh;
+    background: rgb(0,0,0);
+    background: linear-gradient(180deg, rgba(0,0,0,1) 27%, rgba(61,60,60,1) 100%);
+    flex-wrap: wrap;
+    padding-bottom: 1vh;
+    overflow-y: scroll;
+}
+
+.wraptester::-webkit-scrollbar {
+  display: none;
+}
+
+
+.wrapnavbar{
+    width: 82%;
+    height: 10vh;
+    display: flex;
+    padding: 3vw;
+    margin-top: -1vw;
+    position: fixed;
+    margin-left: 18%;
+}
+
+.navleft{
+    display: flex;
+    gap: 1vw;
+    width: 70%;
+}
+
+.navleft h1{
+    color: #666462;
+}
+
+.navleft h1:hover{
+    color: #4054ba;
+}
+
+.navleft input{
+    margin-left: 10vw;
+    margin-top: -1vw;
+    padding: 1.5vw;
+    border: solid white 1px;
+    border-radius: 0.5vw;
+    font-size:smaller;
+    background-color: #1d1d1d;
+}
+
+.navright{
+    display: flex;
+    width: 30%;
+    gap: 1vw;
+}
+
+
+.avatar{
+    display: flex;
+    align-items: center;
+    margin-left: 2vw;
+    margin-top: -2vh;
+    width: 50%;
+    height: 7vh;
+    background-color: #25252d;
+    border-radius: 0.5vw;
+}
+
+.avatar h1{
+    font-size:smaller;
+    margin-left: 0.5vw;
+}
+
+.avatar .iavatar{
+    margin-left: 0.5vw;
+}
+
+
+/* sidebar style */
+/* sidebar style */
+/* sidebar style */
+/* sidebar style */
+/* sidebar style */
+/* sidebar style */
+/* sidebar style */
+/* sidebar style */
+/* sidebar style */
+/* sidebar style */
+/* sidebar style */
+/* sidebar style */
+/* sidebar style */
+/* sidebar style */
+
+.wrapsidebar{
+    position: fixed;
+    /* margin-top: vh; */
+    width: 18%;
+    height: 90vh;
+    /* background-color: #18181d; */
+}
+
+.sidebarlogo{
+    display: flex;
+    justify-content: center;
+    gap: 1vw;
+    padding: 3vw;
+}
+
+.listmenu{
+    width: 100%;
+    height: auto;
+    display: flexbox;
+    text-align: center;
+    /* background-color: aqua; */
+}
+
+
+
+.tolink{
+    width: 100%;
+    height: 6vh;
+    /* background-color: aqua; */
+    justify-content: center;
+    align-items: center;
+    gap: 1vw;
+    display: flex;
+    /* gap: 2vh; */
+}
+
+.tolink:hover{
+    background-color: #5773ff;
+}
+
+.tolink a{
+    text-align: left;
+}
+
+.wraplay{
+    width: 80%;
+    height: auto;
+    /* background-color: aqua; */
+    margin-left: 10%;
+}
+
+
+.kontolBesar{
+  display: none;
+}
+
+
+/* pplay page */
+
+/* * {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+} */
+
+
+
+
+
+/* ////////////////////////////////css home /////////////////////// */
+.wraphome{
+  margin-left: 20%;
+  width: 80%;
+  height: 85vh;
+  margin-top: 13vh;
+  overflow-y: scroll;
+}
+
+.wraphome::-webkit-scrollbar {
+  display: none;
+}
+
+#style-1::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 1vw;
+	background-color: #000000;
+}
+
+
+
+.mainhome{
+  width: 100%;
+  height: auto;
+  display: flex;
+}
+
+.mainhomeleft{
+  width: 73%;
+}
+ 
+.mainhomeleft p {
+  padding-top: 1vh;
+}
+
+.mainhomeleft h1{ 
+  font-size:3vw;
+  font-weight: bold;
+}
+
+.artistname{
+  width: 50vw;
+  height: 5vh;
+  display: flex;
+  gap: 2vw;
+  align-items: center;
+}
+
+.artistname h1{
+  font-size: 1vw;
+  font-weight: 500;
+}
+
+.artistname p {
+  font-size: 1vw;
+  margin-top: -1vw;
+  font-size:medium;
+  color: grey;
+}
+
+.listenow{
+  margin-top: 2vh;
+  display: flex;
+  gap: 2vw;
+}
+
+.listenow button{
+  width: 8vw;
+  height: 5vh;
+  font-size: small;
+  border-radius: 2vw;
+  background-color: #5773ff;
+}
+
+.border_like{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  width: 5vh;
+  height: 5vh;
+  border-radius: 100%;
+  border: solid white 1px;
+  background-color: none;
+}
+
+.mainhomemusic{
+  margin-top: 2vh;
+  width: 100%;
+  gap: 1vw;
+  height: auto;
+  display: flex;
+}
+
+.mainhomemusicleft{
+  width: 65%;
+  gap: 0.5vw;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.wrap_top_artis{
+  width: 100%;
+  height: 20vh;
+  border-radius: 0.5vw;
+  background-color: #2C2C2C;
+  justify-content: center;
+  align-items: center;
+}
+
+.mainhomemusicright{
+  width: 35%;
+}
+
+.top_artis{
+  width: 90%;
+  padding: 0.5vw;
+  margin-left: 5%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.top_artis_image{
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  gap: 2vw;
+  text-align: center;
+}
+
+
+.top_artis_image h1{
+  font-size:x-small;
+}
+
+.image_top{
+  width: 60px;
+  border-radius: 100%;
+}
+
+.backstreet{
+  width: auto;
+  height: auto;
+}
+.playmusic{
+  width: 95%; 
+  height: 51vh;
+  border-radius: 0.5vw;
+  /* overflow-y: hidden; */
+  background-color: #202026;
+}
+
+.wrap_genre{
+  width: 100%;
+  height: 30vh;
+  border-radius: 0.5vw;
+  background-color: #2C2C2C;
+}
+
+.wrap_chart{
+  width: 49%;
+  height: 350vh;
+  border-radius: 0.5vw;
+  background-color: #2C2C2C;
+}
+
+.playmusic2{
+  width: 100%;
+  height: 10vh;
+  /* background-color: #5773ff; */
+}
+

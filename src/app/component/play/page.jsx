@@ -53,34 +53,41 @@ import { Abel } from "next/font/google";
 const fmtMSS = (s) => new Date(1000 * s).toISOString().substr(15, 4);
 
 const tracks = [
-  // {
-  //   imageArtis: the1975,
-  //   url: "https://od.lk/s/NzJfNDQ4NTA5Nzhf/aboutYou.mp3",
-  //   title:"About You",
-  //   durasi: "5:23",
-  //   tags: ["house"],
-  // },
+  {
+    imageArtis: the1975,
+    url: "https://od.lk/s/NzJfNDQ4NTA5Nzhf/aboutYou.mp3",
+    title:"About You",
+    durasi: "5:23",
+    tags: ["house"],
+  },
   {
     imageArtis: heaevenSent,
-    url: "https://drive.google.com/file/d/1az1I8RiN5-70imQ5fjEZ6QbPxOVS9RaW/view?usp=sharing",
+    url: "https://audio.jukehost.co.uk/Ek3A05BspOvUMD5B0Tc4jEe0JccOyy55",
     title: "Heaven Sent",
     durasi: "2:50",
     tags: ["dnb"],
   },
-  // {
-  //   imageArtis: dadysHome,
-  //   url: "https://od.lk/s/NzJfNDQ4NTA5Nzlf/papahPulang.mp3",
-  //   title: "Dadys Home",
-  //   durasi: "4:12",
-  //   tags: ["dubstep"],
-  // },
-  // {
-  //   imageArtis: kmagic,
-  //   url: "https://od.lk/s/NzJfNDQ4NTA5ODFf/versace%20on%20the%20floor.mp3",
-  //   title: "versace on the floor",
-  //   durasi: "5:36",
-  //   tags: ["dubstep"],
-  // },
+  {
+    imageArtis: heaevenSent,
+    url: "https://audio.jukehost.co.uk/8hPPKe7WfT1SHKSh29xmiJddAhLFBdga",
+    title: "Heaven Sent",
+    durasi: "2:50",
+    tags: ["dnb"],
+  },
+  {
+    imageArtis: dadysHome,
+    url: "https://od.lk/s/NzJfNDQ4NTA5Nzlf/papahPulang.mp3",
+    title: "Dadys Home",
+    durasi: "4:12",
+    tags: ["dubstep"],
+  },
+  {
+    imageArtis: kmagic,
+    url: "https://od.lk/s/NzJfNDQ4NTA5ODFf/versace%20on%20the%20floor.mp3",
+    title: "versace on the floor",
+    durasi: "5:36",
+    tags: ["dubstep"],
+  },
 ];
 
 const topArtis = [
