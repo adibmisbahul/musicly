@@ -523,6 +523,8 @@ const Tester = ({
         {/* </div> */}
         <div>
           {/* <Navigasi /> */}
+
+          {/* ///////////main conten///////////// */}
           <div className={styles.wraphome} id={"styles-3"}>
             <div className={styles.mainhome}>
               <div className={styles.mainhomeleft}>
