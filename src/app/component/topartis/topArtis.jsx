@@ -11,9 +11,7 @@ const ListItems = ({ items }) => {
             <div className={styles.topartis123}>
               <Image src={item.Image} alt="" className={styles.topArtis} />
             </div>
-            {/* <div>
-              <h1>{item.name}</h1>
-            </div> */}
+            
           </div>
         </>
       ))}

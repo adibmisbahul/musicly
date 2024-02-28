@@ -21,6 +21,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/component/topartis/topArtis.jsx", "src/app/tester/page.jsx", "src/app/search/page.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/component/topartis/topArtis.jsx", "src/app/tester/page.jsx", "src/app/search/page.jsx", "src/app/component/sibebar.jsx"],
   "exclude": ["node_modules"]
 }

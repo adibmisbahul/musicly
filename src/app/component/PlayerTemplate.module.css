@@ -1,8 +1,8 @@
 .wrapper {
   border-radius: 10px;
-  
-  background-color: var(--playerBackground);
+  background-color: #202026;
   overflow:hidden;
+  height: 48vh;
   font-family: 'Quicksand', sans-serif;
 }
 

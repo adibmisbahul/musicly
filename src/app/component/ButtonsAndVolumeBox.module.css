@@ -1,7 +1,8 @@
 .wrapper {
     display: grid;
     grid-template-columns: auto 30%;
-    margin-bottom: 30px;
+    /* margin-bottom: 30px; */
+    margin-top: -3vh;
   }
   
   @media only screen and (max-width: 800px) {

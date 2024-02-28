@@ -1,9 +1,8 @@
 "use client";
 import React, { useState, useEffect } from "react";
-// import styles from "./sidebar.module.css";
+import styles from "./sidebar.module.css";
 import Link from "next/link";
 import Image from "next/image";
-import styles from "./tester.module.css";
 
 import logo from "../assets/logo musicly.png";
 import compasIcon from "../icons/bi--compass-fill.svg";
@@ -29,43 +28,43 @@ import sza from "../assets/SOS album by Sza 1.png";
 import joji from "../assets/joji.png";
 import brunoMars2 from "../assets/bruno mars.png";
 import lany from "../assets/lany.png";
-import Sza from "../assets/sza.jpg";
-
+import Sza from "../assets/sza.jpg"
 /////////////Play Music/////////////
 
-import { PageTemplate } from "../component/PageTemplate";
-import { TagsTemplate } from "../component/TagsTemplate";
-import { TagItem } from "../component/TagItem";
-import { Search } from "../component/Search";
-import { PlayerTemplate } from "../component/PlayerTemplate";
-import { TitleAndTimeBox } from "../component/TitleAndTimeBox";
-import { Title } from "../component/Title";
-import { Time } from "../component/Time";
-import { Progress } from "../component/Progress";
-import { ButtonsAndVolumeBox } from "../component/ButtonsAndVolumeBox";
-import { ButtonsBox } from "../component/ButtonsBox";
-import { Loop } from "../component/Loop";
-import { Previous } from "../component/Previous";
-import { Play } from "../component/Play";
-import { Pause } from "../component/Pause";
-import { Next } from "../component/Next";
-import { Shuffle } from "../component/Shuffle";
-import { Volume } from "../component/Volume";
-import { PlaylistTemplate } from "../component/PlaylistTemplate";
-import { PlaylistItem } from "../component/PlaylistItem";
-import { ImageArtis12 } from "../component/imageArtis";
-import ListItems from "../component/topartis/topArtis";
-import Navigasi from "../component/navigasi";
+import { PageTemplate } from "./PageTemplate";
+import { TagsTemplate } from "./TagsTemplate";
+import { TagItem } from "./TagItem";
+import { Search } from "./Search";
+import { PlayerTemplate } from "./PlayerTemplate";
+import { TitleAndTimeBox } from "./TitleAndTimeBox";
+import { Title } from "./Title";
+import { Time } from "./Time";
+import { Progress } from "./Progress";
+import { ButtonsAndVolumeBox } from "./ButtonsAndVolumeBox";
+import { ButtonsBox } from "./ButtonsBox";
+import { Loop } from "./Loop";
+import { Previous } from "./Previous";
+import { Play } from "./Play";
+import { Pause } from "./Pause";
+import { Next } from "./Next";
+import { Shuffle } from "./Shuffle";
+import { Volume } from "./Volume";
+import { PlaylistTemplate } from "./PlaylistTemplate";
+import { PlaylistItem } from "./PlaylistItem";
+import { ImageArtis12 } from "./imageArtis";
+import ListItems from "./topartis/topArtis";
+import Navigasi from "./navigasi";
 
-/////////////////icons/////////
-import SetingsIcon from "../../../public/setings icon.png";
-import NotifIcon from "../../../public/notif.png";
-import Avatar from "../../../public/avatar.jpeg";
-import likeIcon from "../../../public/like icon.svg";
-
-const fmtMSS = (s) => new Date(1000 * s).toISOString().substr(15, 4);
+const fmtMSS = (s ) => new Date(1000 * s ).toISOString().substr(15, 4);
 
 const tracks = [
+  // {
+  //   imageArtis: the1975,
+  //   url: "https://od.lk/s/NzJfNDQ4NTA5Nzhf/aboutYou.mp3",
+  //   title: "About You",
+  //   durasi: "5:23",
+  //   tags: ["house"],
+  // },
   {
     imageArtis: heaevenSent,
     url: "https://audio.jukehost.co.uk/Ek3A05BspOvUMD5B0Tc4jEe0JccOyy55",
@@ -76,10 +75,24 @@ const tracks = [
   {
     imageArtis: Sza,
     url: "https://audio.jukehost.co.uk/8hPPKe7WfT1SHKSh29xmiJddAhLFBdga",
-    title: "Sza",
-    durasi: "4:40",
+    title: "Heaven Sent",
+    durasi: "2:50",
     tags: ["dnb"],
   },
+  // {
+  //   imageArtis: dadysHome,
+  //   url: "https://od.lk/s/NzJfNDQ4NTA5Nzlf/papahPulang.mp3",
+  //   title: "Dadys Home",
+  //   durasi: "4:12",
+  //   tags: ["dubstep"],
+  // },
+  // {
+  //   imageArtis: kmagic,
+  //   url: "https://od.lk/s/NzJfNDQ4NTA5ODFf/versace%20on%20the%20floor.mp3",
+  //   title: "versace on the floor",
+  //   durasi: "5:36",
+  //   tags: ["dubstep"],
+  // },
 ];
 
 const links = [
@@ -87,23 +100,13 @@ const links = [
   { name: "Genres", path: "/splash", icons: musicIcon },
   { name: "Albums", path: "/", icons: musicIcon2 },
   { name: "Artis", path: "/", icons: micIcon },
-  { name: "Radio", path: "/", icons: radioIcon },
+  { name: "Tester", path: "/tester", icons: radioIcon },
 ];
 
-const topArtis = [
-  { name: "The Weekend", Image: heaevenSent },
-  { name: "Chase Atlantic", Image: chaseAtlantic },
-  { name: "Sza", Image: sza },
-  { name: "joji", Image: joji },
-  { name: "Bruno Mars", Image: brunoMars2 },
-  { name: "Lany", Image: lany },
-  { name: "The 1975", Image: the1975 },
-];
-
-const Tester = ({
+const Sidebar = ({
   trackList = tracks,
-  includeTags = false,
-  includeSearch = true,
+  includeTags = true,
+  includeSearch = false,
   showPlaylist = true,
   sortTracks = false,
   autoPlayNextTrack = true,
@@ -343,60 +346,20 @@ const Tester = ({
     setCurTrack((curTrack = playlist[index]));
     play();
   };
+
   return (
     <>
-      <div className={styles.wraptester} id="style-3">
-        {/* <div> */}
-        <div className={styles.wrapnavbar}>
-          <div className={styles.navleft}>
-            <h1>Music</h1>
-            <h1>Podcast</h1>
-            <h1>Live</h1>
-            <PageTemplate>
-              {includeSearch && (
-                <Search
-                  value={query}
-                  onChange={(e) => updateQuery(e.target.value.toLowerCase())}
-                  placeholder={"search"}
-                />
-              )}
-            </PageTemplate>
-          </div>
-
-          <div className={styles.navright}>
-            <div>
-              <Image
-                src={SetingsIcon}
-                width={20}
-                height={20}
-                alt="Picture of the author"
-              />
-            </div>
-            <div>
-              <Image
-                src={NotifIcon}
-                width={15}
-                height={15}
-                alt="Picture of the author"
-              />
-            </div>
-            <div className={styles.avatar}>
-              <Image
-                className={styles.iavatar}
-                src={Avatar}
-                width={35}
-                height={35}
-                alt="Picture of the author"
-              />
-              <Link rel="stylesheet" href="http://localhost:5000/">
-                login
-              </Link>
-            </div>
-          </div>
-        </div>
-        {/* </div> */}
-        {/* <div> */}
+      <div>
         <div className={styles.kontolBesar}>
+          <PageTemplate>
+            {includeSearch && (
+              <Search
+                value={query}
+                onChange={(e) => updateQuery(e.target.value.toLowerCase())}
+                placeholder={`Search ${trackList.length} tracks...`}
+              />
+            )}
+          </PageTemplate>
           {includeTags && (
             <TagsTemplate>
               {tags.map((tag, index) => {
@@ -429,6 +392,7 @@ const Tester = ({
                   playlist.push(index);
                   return (
                     <>
+                      {/* <ImageArtis12 imageArtis={imageArtis} /> */}
                       <PlaylistItem
                         status={curTrack === index ? "active" : ""}
                         key={index}
@@ -490,7 +454,7 @@ const Tester = ({
                 onMouseUp={play}
                 onTouchEnd={play}
               />
-              <div className={styles.playmusic2}>
+              <div className="playmusic2">
                 <ButtonsAndVolumeBox>
                   <ButtonsBox>
                     <Loop
@@ -520,105 +484,174 @@ const Tester = ({
             </PlayerTemplate>
           </div>
         </div>
-        {/* </div> */}
-        <div>
-          {/* <Navigasi /> */}
-          <div className={styles.wraphome} id={"styles-3"}>
-            <div className={styles.mainhome}>
-              <div className={styles.mainhomeleft}>
-                <p>Trending New Hist</p>
-                <h1>Versace On The Floor</h1>
-                <div className={styles.artistname}>
-                  <h1>Bruno Mars</h1>
-                  <p>63 Millions Follow</p>
+      </div>
+
+      {/* <div>
+        <div className={styles.wrapsidebar}>
+          <div className={styles.sidebarlogo}>
+            <Image
+              src={logo}
+              width={25}
+              height={25}
+              alt="Picture of the author"
+            />
+            <h1>Musicly</h1>
+          </div>
+          <div className={styles.listmenu}>
+            {links.map((a, b) => {
+              return (
+                <div className={styles.tolink}>
+                  <Image src={a.icons} alt="" />
+                  <Link key={b} href={a.path}>
+                    {a.name}
+                  </Link>
                 </div>
-                <div className={styles.listenow}>
-                  <button>Listen Now</button>
-                  <div className={styles.border_like}>
-                    <Image
-                      src={likeIcon}
-                      width={25}
-                      height={25}
-                      alt="Picture of the author"
-                    />
-                  </div>
-                </div>
-              </div>
-              <div className={styles.mainhomeright}>
-                <Image
-                  src={kmagic}
-                  width={200}
-                  height={200}
-                  alt="Picture of the author"
+              );
+            })}
+          </div>
+          <div className={styles.wraplay}>
+             <PlayerTemplate>
+            <ImageArtis12 imageArtis={imageArtis} />
+
+            <TitleAndTimeBox>
+              <Title title={title} />
+              <Time
+                time={`${!time ? "0:00" : fmtMSS(time)}/${
+                  !length ? "0:00" : fmtMSS(length)
+                }`}
+              />
+            </TitleAndTimeBox>
+            <Progress
+              value={slider}
+              progress={buffer}
+              onChange={(e) => {
+                setSlider(e.target.value);
+                setDrag(e.target.value);
+              }}
+              onMouseUp={play}
+              onTouchEnd={play}
+            />
+            <div className="playmusic2">
+              <ButtonsAndVolumeBox>
+                <ButtonsBox>
+                  <Loop
+                    src={looped ? loopCurrentBtn : loopNoneBtn}
+                    onClick={loop}
+                  />
+                  <Previous src={previousBtn} onClick={previous} />
+                  {isPlaying ? (
+                    <Pause src={pauseBtn} onClick={pause} />
+                  ) : (
+                    <Play src={playButton} onClick={play} />
+                  )}
+                  <Next src={nextBtn} onClick={next} />
+                  <Shuffle
+                    src={shuffled ? shuffleAllBtn : shuffleNoneBtn}
+                    onClick={shuffle}
+                  />
+                </ButtonsBox>
+                <Volume
+                  value={volume}
+                  onChange={(e) => {
+                    setVolume(e.target.value / 100);
+                  }}
                 />
-              </div>
+              </ButtonsAndVolumeBox>
             </div>
-            <div className={styles.mainhomemusic}>
-              <div className={styles.mainhomemusicleft}>
-                <div className={styles.wrap_top_artis}>
-                  <div className={styles.top_artis}>
-                    <p>Top Artis</p>
-                    <p>See All</p>
-                  </div>
-                  <div className={styles.top_artis_image}>
-                    {/* <ListItems items={topArtis}/> */}
-                    {topArtis.map((q, w) => {
-                      return (
-                        <>
-                          <div>
-                            <Image src={q.Image} className={styles.image_top} />
-                            <h1>{q.name}</h1>
-                          </div>
-                        </>
-                      );
-                    })}
-                  </div>
-                </div>
-                <div className={styles.wrap_genre}></div>
-              </div>
-              <div className={styles.mainhomemusicright}>
-                <div className={styles.playmusic}></div>
-              </div>
-            </div>
+          </PlayerTemplate> 
           </div>
         </div>
-      </div>
+      </div> */}
     </>
   );
 };
 
-export default Tester;
+export default Sidebar;
 
-{
-  /* <div className={styles.wrap_chart}>
-<PlaylistTemplate visibility={showPlaylist}>
-  {trackList.sort(sortCompare).map((el, index) => {
-    if (
-      filter.length === 0 ||
-      filter.some((filter) => el.tags.includes(filter))
-    ) {
-      if (
-        el.title.toLowerCase().includes(query.toLowerCase())
-        // el.imageArtis.toLowerCase().includes(query.toLowerCase())
-      ) {
-        playlist.push(index);
-        return (
-          <>
-            <PlaylistItem
-              status={curTrack === index ? "active" : ""}
-              key={index}
-              data_key={index}
-              imageArtis={el.imageArtis}
-              title={el.title}
-              src={el.url}
-              durasi={el.durasi}
-              onClick={playlistItemClickHandler}
-            />
-          </>
-        );
-      }
-    }
-  })}
-</PlaylistTemplate>
-</div> */
-}
+// export default function sidebar() {
+//   const links = [
+//     { name: "Explore", path: "/", icons: compasIcon },
+//     { name: "Genres", path: "/splash", icons: musicIcon },
+//     { name: "Albums", path: "/", icons: musicIcon2 },
+//     { name: "Artis", path: "/", icons: micIcon },
+//     { name: "Radio", path: "/", icons: radioIcon },
+//   ];
+//   return (
+//     <div>
+//       <div className={styles.wrapsidebar}>
+//         <div className={styles.sidebarlogo}>
+//           <Image
+//             src={logo}
+//             width={25}
+//             height={25}
+//             alt="Picture of the author"
+//           />
+//           <h1>Musicly</h1>
+//         </div>
+//         <div className={styles.listmenu}>
+//           {links.map((a, b) => {
+//             return (
+//               <div className={styles.tolink}>
+//                 <Image src={a.icons} alt="" />
+//                 <Link key={b} href={a.path}>
+//                   {a.name}
+//                 </Link>
+//               </div>
+//             );
+//           })}
+//         </div>
+//         <div className={styles.wraplay}>
+//           {/* <PlayerTemplate>
+//             <ImageArtis12 imageArtis={imageArtis} />
+
+//             <TitleAndTimeBox>
+//               <Title title={title} />
+//               <Time
+//                 time={`${!time ? "0:00" : fmtMSS(time)}/${
+//                   !length ? "0:00" : fmtMSS(length)
+//                 }`}
+//               />
+//             </TitleAndTimeBox>
+//             <Progress
+//               value={slider}
+//               progress={buffer}
+//               onChange={(e) => {
+//                 setSlider(e.target.value);
+//                 setDrag(e.target.value);
+//               }}
+//               onMouseUp={play}
+//               onTouchEnd={play}
+//             />
+//             <div className="playmusic2">
+//               <ButtonsAndVolumeBox>
+//                 <ButtonsBox>
+//                   <Loop
+//                     src={looped ? loopCurrentBtn : loopNoneBtn}
+//                     onClick={loop}
+//                   />
+//                   <Previous src={previousBtn} onClick={previous} />
+//                   {isPlaying ? (
+//                     <Pause src={pauseBtn} onClick={pause} />
+//                   ) : (
+//                     <Play src={playButton} onClick={play} />
+//                   )}
+//                   <Next src={nextBtn} onClick={next} />
+//                   <Shuffle
+//                     src={shuffled ? shuffleAllBtn : shuffleNoneBtn}
+//                     onClick={shuffle}
+//                   />
+//                 </ButtonsBox>
+//                 <Volume
+//                   value={volume}
+//                   onChange={(e) => {
+//                     setVolume(e.target.value / 100);
+//                   }}
+//                 />
+//               </ButtonsAndVolumeBox>
+//             </div>
+//           </PlayerTemplate> */}
+//         </div>
+//       </div>
+//     </div>
+//   );
+// }
