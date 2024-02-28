@@ -561,7 +561,6 @@ const Tester = ({
                     <p>See All</p>
                   </div>
                   <div className={styles.top_artis_image}>
-                    {/* <ListItems items={topArtis}/> */}
                     {topArtis.map((q, w) => {
                       return (
                         <>
@@ -577,7 +576,38 @@ const Tester = ({
                 <div className={styles.wrap_genre}></div>
               </div>
               <div className={styles.mainhomemusicright}>
-                <div className={styles.playmusic}></div>
+                <div className={styles.playmusic}>
+                <PlaylistTemplate visibility={showPlaylist}>
+                  {trackList.sort(sortCompare).map((el, index) => {
+                    if (
+                      filter.length === 0 ||
+                      filter.some((filter) => el.tags.includes(filter))
+                    ) {
+                      if (
+                        el.title.toLowerCase().includes(query.toLowerCase())
+                        // el.imageArtis.toLowerCase().includes(query.toLowerCase())
+                      ) {
+                        playlist.push(index);
+                        return (
+                          <>
+                            {/* <ImageArtis12 imageArtis={imageArtis} /> */}
+                            <PlaylistItem
+                              status={curTrack === index ? "active" : ""}
+                              key={index}
+                              data_key={index}
+                              imageArtis={el.imageArtis}
+                              title={el.title}
+                              src={el.url}
+                              durasi={el.durasi}
+                              onClick={playlistItemClickHandler}
+                            />
+                          </>
+                        );
+                      }
+                    }
+                  })}
+                </PlaylistTemplate>
+                </div>
               </div>
             </div>
           </div>
