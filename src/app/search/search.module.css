@@ -67,6 +67,7 @@
     padding: 3vw;
     margin-top: -1vw;
     position: fixed;
+    background-color: #000000;
     margin-left: 17%;
 }
 
@@ -174,6 +175,9 @@
 }
 
 .tolink:hover{
+    border-radius: 1vw;
+    margin-left: 15%;
+    width: 70%;
     background-color: #5773ff;
 }
 
@@ -209,17 +213,17 @@
 
 
 .wrapsong{
-    width: 85%;
+    width: 80%;
     height: 250px;
     display: flex;
-    margin-left: 15%;
-    gap: 5.5vh;
+    margin-left: 20%;
+    gap: 2vw;
     justify-content: center;
 }
 
 .toimage{
     width: 17%;
-    height: 43vh;
+    height: 200px;
     background-color: #3E3E3E;
     border-radius: 15px;
 }
@@ -227,7 +231,7 @@
 .toimage img{
     border-radius: 50%;
     margin-left: 25px;
-    width: 75%;
+    width: 50%;
     margin-top: 23px;
 }
 
@@ -244,7 +248,7 @@
 
 .toimage2{
     width: 17%;
-    height: 43vh;
+    height: 200px;
     background-color: #3E3E3E;
     border-radius: 15px;
 }
@@ -252,7 +256,7 @@
 .toimage2 img{
     border-radius: 10%;
     margin-left: 25px;
-    width: 75%;
+    width: 50%;
     margin-top: 23px;
 }
 
@@ -265,4 +269,12 @@
 .toimage2 h2{
     margin-left: 15px;
     font-size: small;
+}
+
+
+.wraplistsearch{
+    width: 80%;
+    height: 200px;
+    margin-left: 20%;
+    /* background-color: #4054ba; */
 }

@@ -54,13 +54,6 @@ const fmtMSS = (s) => new Date(1000 * s).toISOString().substr(15, 4);
 
 const tracks = [
   {
-    imageArtis: the1975,
-    url: "https://od.lk/s/NzJfNDQ4NTA5Nzhf/aboutYou.mp3",
-    title:"About You",
-    durasi: "5:23",
-    tags: ["house"],
-  },
-  {
     imageArtis: heaevenSent,
     url: "https://audio.jukehost.co.uk/Ek3A05BspOvUMD5B0Tc4jEe0JccOyy55",
     title: "Heaven Sent",
@@ -68,25 +61,39 @@ const tracks = [
     tags: ["dnb"],
   },
   {
-    imageArtis: heaevenSent,
+    imageArtis: Sza,
     url: "https://audio.jukehost.co.uk/8hPPKe7WfT1SHKSh29xmiJddAhLFBdga",
-    title: "Heaven Sent",
-    durasi: "2:50",
+    title: "Sza",
+    durasi: "4:40",
     tags: ["dnb"],
   },
   {
-    imageArtis: dadysHome,
-    url: "https://od.lk/s/NzJfNDQ4NTA5Nzlf/papahPulang.mp3",
-    title: "Dadys Home",
-    durasi: "4:12",
-    tags: ["dubstep"],
+    imageArtis: the1975,
+    url: "https://audio.jukehost.co.uk/4m57coK2CSZtymzEsK8hvGnyW7SBi1te",
+    title: "About You",
+    durasi: "4:40",
+    tags: ["dnb"],
   },
   {
-    imageArtis: kmagic,
-    url: "https://od.lk/s/NzJfNDQ4NTA5ODFf/versace%20on%20the%20floor.mp3",
-    title: "versace on the floor",
-    durasi: "5:36",
-    tags: ["dubstep"],
+    imageArtis: Avatar,
+    url: "https://audio.jukehost.co.uk/WvtdyqQ1Y4P4KXQTs9hpNXpib9rGmWyk",
+    title: "Somebody",
+    durasi: "6:40",
+    tags: ["dnb"],
+  },
+  {
+    imageArtis: Avatar,
+    url: "https://audio.jukehost.co.uk/uwNZSwlbPo3SEA45CZCG7B7jC81t9Uj6",
+    title: "kontol",
+    durasi: "6:40",
+    tags: ["dnb"],
+  },
+  {
+    imageArtis: brunoMars2,
+    url: "https://audio.jukehost.co.uk/a138HWjZNnFMrb0SQVwirtKSFdF8HOON",
+    title: "Bruno Mars",
+    durasi: "6:40",
+    tags: ["dnb"],
   },
 ];
 

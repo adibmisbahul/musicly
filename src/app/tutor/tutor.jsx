@@ -1,15 +1,8 @@
-"use client";
+'use client'
 import React, { useState, useEffect } from "react";
-// import styles from "./sidebar.module.css";
 import Link from "next/link";
 import Image from "next/image";
-import styles from "./search.module.css";
-
-import ariana from "../assets/ari.jpg";
-import deftones from "../assets/def.jpg";
-import rani from "../assets/rani.jpg";
-import waduh from "../assets/waduh.jpg";
-import flower from "../assets/flower.jpg";
+import styles from "./tutor.module.css";
 
 import logo from "../assets/logo musicly.png";
 import compasIcon from "../icons/bi--compass-fill.svg";
@@ -36,6 +29,7 @@ import joji from "../assets/joji.png";
 import brunoMars2 from "../assets/bruno mars.png";
 import lany from "../assets/lany.png";
 import Sza from "../assets/sza.jpg";
+import Rihana from "../assets/Rihana.jpg"
 
 /////////////Play Music/////////////
 
@@ -66,9 +60,32 @@ import { ImageArtis12 } from "../component/imageArtis";
 import SetingsIcon from "../../../public/setings icon.png";
 import NotifIcon from "../../../public/notif.png";
 import Avatar from "../../../public/avatar.jpeg";
-
+import likeIcon from "../../../public/like icon.svg";
 
 const fmtMSS = (s) => new Date(1000 * s).toISOString().substr(15, 4);
+
+
+async function fetchDataFromAPI() {
+  try {
+    const response = await fetch("http://localhost:1000/tracks");
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error("Error fetching data:", error);
+    return [];
+  }
+}
+
+async function updateTracks() {
+  const apiData = await fetchDataFromAPI();
+  tracks.push(...apiData);
+  return tracks;
+}
+
+updateTracks().then((updatedTracks) => {
+  console.log("Updated Tracks:", updatedTracks);
+});
+
 
 const tracks = [
   {
@@ -77,43 +94,9 @@ const tracks = [
     title: "Heaven Sent",
     durasi: "2:50",
     tags: ["dnb"],
-  },
-  {
-    imageArtis: Sza,
-    url: "https://audio.jukehost.co.uk/8hPPKe7WfT1SHKSh29xmiJddAhLFBdga",
-    title: "Sza",
-    durasi: "4:40",
-    tags: ["dnb"],
-  },
-  {
-    imageArtis: the1975,
-    url: "https://audio.jukehost.co.uk/4m57coK2CSZtymzEsK8hvGnyW7SBi1te",
-    title: "About You",
-    durasi: "4:40",
-    tags: ["dnb"],
-  },
-  {
-    imageArtis: Avatar,
-    url: "https://audio.jukehost.co.uk/WvtdyqQ1Y4P4KXQTs9hpNXpib9rGmWyk",
-    title: "Somebody",
-    durasi: "6:40",
-    tags: ["dnb"],
-  },
-  {
-    imageArtis: Avatar,
-    url: "https://audio.jukehost.co.uk/uwNZSwlbPo3SEA45CZCG7B7jC81t9Uj6",
-    title: "kontol",
-    durasi: "6:40",
-    tags: ["dnb"],
-  },
-  {
-    imageArtis: brunoMars2,
-    url: "https://audio.jukehost.co.uk/a138HWjZNnFMrb0SQVwirtKSFdF8HOON",
-    title: "Bruno Mars",
-    durasi: "6:40",
-    tags: ["dnb"],
-  },
+  }
 ];
+
 
 const links = [
   { name: "Explore", path: "/", icons: compasIcon },
@@ -123,23 +106,22 @@ const links = [
   { name: "Radio", path: "/", icons: radioIcon },
 ];
 
-const music = [
-  { image: deftones, name: "Deftones", name2: "Artist" },
-  { image: ariana, name: "Ariana Grande", name2: "Artist" },
+const topArtis = [
+  { name: "The Weekend", Image: heaevenSent },
+  { name: "Chase Atlantic", Image: chaseAtlantic },
+  { name: "Sza", Image: sza },
+  { name: "joji", Image: joji },
+  { name: "Bruno Mars", Image: brunoMars2 },
+  { name: "Lany", Image: lany },
+  { name: "The 1975", Image: the1975 },
 ];
 
-const music2 = [
-  { image: rani, name: "It Will Rain", name2: "Bruno Earth" },
-  { image: waduh, name: "Waduh", name2: "By adibmisbahul" },
-  { image: flower, name: "Flower Boy", name2: "Tyler, The Creator" },
-];
-
-const Tester = ({
+const Tutor = ({
   trackList = tracks,
   includeTags = false,
-  includeSearch = true,
+  includeSearch = false,
   showPlaylist = true,
-  sortTracks = false,
+  sortTracks = true ,
   autoPlayNextTrack = true,
   artisImage = true,
   customColorScheme = {},
@@ -171,6 +153,10 @@ const Tester = ({
       }
     });
   });
+
+
+  
+
 
   for (const [variable, value] of Object.entries(customColorScheme)) {
     document.documentElement.style.setProperty(`--${variable}`, value);
@@ -557,33 +543,63 @@ const Tester = ({
         {/* </div> */}
         <div>
           {/* <Navigasi /> */}
-          <div>
-            <div>
-              {/* <Navigasi /> */}
-              <div className={styles.wrapsearch}>
-                <h1>Recent Search</h1>
-                <div className={styles.wrapsong}>
-                  {music.map((a, b) => {
-                    return (
-                      <div className={styles.toimage} key={b}>
-                        <Image src={a.image} alt="" />
-                        <h1>{a.name}</h1>
-                        <h2>{a.name2}</h2>
-                      </div>
-                    );
-                  })}
 
-                  {music2.map((c, d) => {
-                    return (
-                      <div className={styles.toimage2} key={d}>
-                        <Image src={c.image} alt="" />
-                        <h1>{c.name}</h1>
-                        <h2>{c.name2}</h2>
-                      </div>
-                    );
-                  })}
+          {/* ///////////main conten///////////// */}
+          <div className={styles.wraphome} id={"styles-3"}>
+            <div className={styles.mainhome}>
+              <div className={styles.mainhomeleft}>
+                <p>Trending New Hist</p>
+                <h1>Versace On The Floor</h1>
+                <div className={styles.artistname}>
+                  <h1>Bruno Mars</h1>
+                  <p>63 Millions Follow</p>
                 </div>
-                <div className={styles.wraplistsearch}>
+                <div className={styles.listenow}>
+                  <button>Listen Now</button>
+                  <div className={styles.border_like}>
+                    <Image
+                      src={likeIcon}
+                      width={25}
+                      height={25}
+                      alt="Picture of the author"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div className={styles.mainhomeright}>
+                <Image
+                  src={kmagic}
+                  width={200}
+                  height={200}
+                  alt="Picture of the author"
+                />
+              </div>
+            </div>
+            <div className={styles.mainhomemusic}>
+              <div className={styles.mainhomemusicleft}>
+                <div className={styles.wrap_top_artis}>
+                  <div className={styles.top_artis}>
+                    <p>Top Artis</p>
+                    <p>See All</p>
+                  </div>
+                  <div className={styles.top_artis_image}>
+                    {topArtis.map((q, w) => {
+                      return (
+                        <>
+                          <div>
+                            <Image src={q.Image} className={styles.image_top} />
+                            <h1>{q.name}</h1>
+                          </div>
+                        </>
+                      );
+                    })}
+                  </div>
+                </div>
+                <div className={styles.wrap_genre}></div>
+              </div>
+              <div className={styles.mainhomemusicright}>
+                <div className={styles.playmusic}>
+                  <h1>Your Favorite Song</h1>
                 <PlaylistTemplate visibility={showPlaylist}>
                   {trackList.sort(sortCompare).map((el, index) => {
                     if (
@@ -592,12 +608,12 @@ const Tester = ({
                     ) {
                       if (
                         el.title.toLowerCase().includes(query.toLowerCase())
-                        // el.imageArtis.toLowerCase().includes(query.toLowerCase())
+                        
                       ) {
                         playlist.push(index);
                         return (
                           <>
-                            {/* <ImageArtis12 imageArtis={imageArtis} /> */}
+                            
                             <PlaylistItem
                               status={curTrack === index ? "active" : ""}
                               key={index}
@@ -617,7 +633,6 @@ const Tester = ({
                 </div>
               </div>
             </div>
-               
           </div>
         </div>
       </div>
@@ -625,4 +640,36 @@ const Tester = ({
   );
 };
 
-export default Tester;
+export default Tutor;
+
+
+
+
+// async function getTutor() {
+//   const res = await fetch("http://localhost:1000/tracks", {
+//     next: {
+//       revalidate: 2,
+//     },
+//   });
+
+//   return res.json();
+// }
+
+// export default async function TutorlList() {
+//   const tutors = await getTutor();
+
+//   console.log(tutors);
+
+//   return (
+//     <div>
+//       {tutors.map((tutor) => {
+//         return (
+//           <div key={tutor.id}>
+//             <h1>{tutor.title}</h1>
+//             <audio controls src={tutor.url} />
+//           </div>
+//         );
+//       })}
+//     </div>
+//   );
+// }

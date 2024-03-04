@@ -1,6 +1,5 @@
-"use client";
+'use client'
 import React, { useState, useEffect } from "react";
-// import styles from "./sidebar.module.css";
 import Link from "next/link";
 import Image from "next/image";
 import styles from "./tester.module.css";
@@ -30,6 +29,7 @@ import joji from "../assets/joji.png";
 import brunoMars2 from "../assets/bruno mars.png";
 import lany from "../assets/lany.png";
 import Sza from "../assets/sza.jpg";
+import Rihana from "../assets/Rihana.jpg"
 
 /////////////Play Music/////////////
 
@@ -54,14 +54,25 @@ import { Volume } from "../component/Volume";
 import { PlaylistTemplate } from "../component/PlaylistTemplate";
 import { PlaylistItem } from "../component/PlaylistItem";
 import { ImageArtis12 } from "../component/imageArtis";
-import ListItems from "../component/topartis/topArtis";
-import Navigasi from "../component/navigasi";
+
 
 /////////////////icons/////////
 import SetingsIcon from "../../../public/setings icon.png";
 import NotifIcon from "../../../public/notif.png";
 import Avatar from "../../../public/avatar.jpeg";
 import likeIcon from "../../../public/like icon.svg";
+
+
+
+
+
+async function getProducts() {
+  const res = await fetch("http://localhost:1000/products", {
+    cache: "no-store",
+  });
+  return res.json();
+}
+
 
 const fmtMSS = (s) => new Date(1000 * s).toISOString().substr(15, 4);
 
@@ -80,12 +91,26 @@ const tracks = [
     durasi: "4:40",
     tags: ["dnb"],
   },
+  {
+    imageArtis: the1975,
+    url: "https://audio.jukehost.co.uk/4m57coK2CSZtymzEsK8hvGnyW7SBi1te",
+    title: "About You",
+    durasi: "4:40",
+    tags: ["dnb"],
+  },
+  {
+    imageArtis: Rihana,
+    url: "https://audio.jukehost.co.uk/uwNZSwlbPo3SEA45CZCG7B7jC81t9Uj6",
+    title: "Kiss it Better",
+    durasi: "6:40",
+    tags: ["dnb"],
+  },
 ];
 
 const links = [
   { name: "Explore", path: "/", icons: compasIcon },
   { name: "Genres", path: "/splash", icons: musicIcon },
-  { name: "Albums", path: "/", icons: musicIcon2 },
+  { name: "Search", path: "/search", icons: musicIcon2 },
   { name: "Artis", path: "/", icons: micIcon },
   { name: "Radio", path: "/", icons: radioIcon },
 ];
@@ -103,9 +128,9 @@ const topArtis = [
 const Tester = ({
   trackList = tracks,
   includeTags = false,
-  includeSearch = true,
+  includeSearch = false,
   showPlaylist = true,
-  sortTracks = false,
+  sortTracks = true ,
   autoPlayNextTrack = true,
   artisImage = true,
   customColorScheme = {},
@@ -579,6 +604,7 @@ const Tester = ({
               </div>
               <div className={styles.mainhomemusicright}>
                 <div className={styles.playmusic}>
+                  <h1>Your Favorite Song</h1>
                 <PlaylistTemplate visibility={showPlaylist}>
                   {trackList.sort(sortCompare).map((el, index) => {
                     if (
