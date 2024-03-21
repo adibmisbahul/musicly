@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 // import styles from "./sidebar.module.css";
 import Link from "next/link";
 import Image from "next/image";
-import styles from "./search.module.css";
+import styles from "./genre.module.css";
 
 import ariana from "../assets/ari.jpg";
 import deftones from "../assets/def.jpg";

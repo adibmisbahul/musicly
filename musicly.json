@@ -1,0 +1,52 @@
+{
+  "tracks": [
+    {
+      "id":1,
+      "imageArtis": "https://i.pinimg.com/564x/b6/59/37/b659379ca1e8fc9afbc4f0070a33e1b3.jpg",
+      "url": "https://audio.jukehost.co.uk/Ek3A05BspOvUMD5B0Tc4jEe0JccOyy55",
+      "title": "Heaven Sent",
+      "durasi": "2:50",
+      "tags": ["dnb"]
+    },
+    {
+      "id":2,
+      "imageArtis": "https://i.pinimg.com/564x/ce/7a/69/ce7a69b71161f6b902e6c6d699e8bb1d.jpg",
+      "url": "https://audio.jukehost.co.uk/8hPPKe7WfT1SHKSh29xmiJddAhLFBdga",
+      "title": "Sza-Good Days",
+      "durasi": "4:40",
+      "tags": ["dnb"]
+    },
+    {
+      "id":3,
+      "imageArtis": "https://i.pinimg.com/564x/75/b1/43/75b143f5f0377fbb81ab75bcec6ba134.jpg",
+      "url": "https://audio.jukehost.co.uk/4m57coK2CSZtymzEsK8hvGnyW7SBi1te",
+      "title": "About You",
+      "durasi": "4:40",
+      "tags": ["dnb"]
+    },
+    {
+      "id":4,
+      "imageArtis": "https://i.pinimg.com/564x/75/b1/43/75b143f5f0377fbb81ab75bcec6ba134.jpg",
+      "url": "https://audio.jukehost.co.uk/WvtdyqQ1Y4P4KXQTs9hpNXpib9rGmWyk",
+      "title": "Somebody",
+      "durasi": "6:40",
+      "tags": ["dnb"]
+    },
+    {
+      "id":5,
+      "imageArtis": "https://i.pinimg.com/564x/9e/da/9e/9eda9e6a3b6577186ad42e92374927ac.jpg",
+      "url": "https://audio.jukehost.co.uk/uwNZSwlbPo3SEA45CZCG7B7jC81t9Uj6",
+      "title": "Kiss it better",
+      "durasi": "6:40",
+      "tags": ["dnb"]
+    },
+    {
+      "id":6,
+      "imageArtis": "https://i.pinimg.com/564x/bb/de/64/bbde64c10d99a3e02979260c0936a33c.jpg",
+      "url": "https://audio.jukehost.co.uk/a138HWjZNnFMrb0SQVwirtKSFdF8HOON",
+      "title": "Bruno Mars",
+      "durasi": "6:40",
+      "tags": ["dnb"]
+    }
+  ]
+}

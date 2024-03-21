@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
@@ -19,19 +19,13 @@ import nextBtn from "../icons/next.svg";
 import shuffleAllBtn from "../icons/shuffle_all.png";
 import shuffleNoneBtn from "../icons/icon-park-outline--shuffle.svg";
 import the1975 from "../assets/the 1975.png";
-import dadysHome from "../assets/dadysHome.jpeg";
 import heaevenSent from "../assets/heaventSent.jpeg";
 import kmagic from "../assets/24k magic.webp";
-import theWeekend from "../assets/abel.png";
 import chaseAtlantic from "../assets/Chase Atlantic.png";
 import sza from "../assets/SOS album by Sza 1.png";
 import joji from "../assets/joji.png";
 import brunoMars2 from "../assets/bruno mars.png";
 import lany from "../assets/lany.png";
-import Sza from "../assets/sza.jpg";
-import Rihana from "../assets/Rihana.jpg"
-
-/////////////Play Music/////////////
 
 import { PageTemplate } from "../component/PageTemplate";
 import { TagsTemplate } from "../component/TagsTemplate";
@@ -55,63 +49,54 @@ import { PlaylistTemplate } from "../component/PlaylistTemplate";
 import { PlaylistItem } from "../component/PlaylistItem";
 import { ImageArtis12 } from "../component/imageArtis";
 
-
-/////////////////icons/////////
 import SetingsIcon from "../../../public/setings icon.png";
 import NotifIcon from "../../../public/notif.png";
 import Avatar from "../../../public/avatar.jpeg";
 import likeIcon from "../../../public/like icon.svg";
 
+const fmtMSS = (s) => new Date(1000 * s).toISOString().substr(15, 4);
 
-
-
-
-async function getProducts() {
-  const res = await fetch("http://localhost:1000/products", {
-    cache: "no-store",
-  });
-  return res.json();
+async function fetchDataFromAPI() {
+  try {
+    const response = await fetch("http://localhost:1000/tracks");
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error("Error fetching data:", error);
+    return [];
+  }
 }
 
+async function updateTracks() {
+  const apiData = await fetchDataFromAPI();
+  const limitedData = apiData.slice(0, limit);
+  tracks.push(...limitedData);
+  // tracks.push(...apiData);
+  return tracks;
+}
 
-const fmtMSS = (s) => new Date(1000 * s).toISOString().substr(15, 4);
+const limit = 3;
+
+updateTracks(limit).then((updatedTracks) => {
+  // console.log("Updated Tracks:", updatedTracks);
+});
+
 
 const tracks = [
   {
-    imageArtis: heaevenSent,
-    url: "https://audio.jukehost.co.uk/Ek3A05BspOvUMD5B0Tc4jEe0JccOyy55",
-    title: "Heaven Sent",
-    durasi: "2:50",
-    tags: ["dnb"],
-  },
-  {
-    imageArtis: Sza,
-    url: "https://audio.jukehost.co.uk/8hPPKe7WfT1SHKSh29xmiJddAhLFBdga",
-    title: "Sza",
-    durasi: "4:40",
-    tags: ["dnb"],
-  },
-  {
-    imageArtis: the1975,
-    url: "https://audio.jukehost.co.uk/4m57coK2CSZtymzEsK8hvGnyW7SBi1te",
-    title: "About You",
-    durasi: "4:40",
-    tags: ["dnb"],
-  },
-  {
-    imageArtis: Rihana,
-    url: "https://audio.jukehost.co.uk/uwNZSwlbPo3SEA45CZCG7B7jC81t9Uj6",
-    title: "Kiss it Better",
-    durasi: "6:40",
-    tags: ["dnb"],
+    imageArtis: "",
+    url: "",
+    title: "",
+    durasi: "",
+    tags: [""],
   },
 ];
 
 const links = [
   { name: "Explore", path: "/", icons: compasIcon },
-  { name: "Genres", path: "/splash", icons: musicIcon },
+  { name: "Genres", path: "/genre", icons: musicIcon },
   { name: "Search", path: "/search", icons: musicIcon2 },
-  { name: "Artis", path: "/", icons: micIcon },
+  { name: "Artis", path: "/artis", icons: micIcon },
   { name: "Radio", path: "/", icons: radioIcon },
 ];
 
@@ -125,14 +110,36 @@ const topArtis = [
   { name: "The 1975", Image: the1975 },
 ];
 
+const recenly = [
+  {
+    image:
+      "https://i.pinimg.com/564x/0f/58/36/0f58367e1fda58a365698e81836ce1dc.jpg",
+    titlte: "Akad",
+  },
+  {
+    image:
+      "https://i.pinimg.com/564x/b1/67/a6/b167a6d5e1a37d9ab23a66b95a2c7e1f.jpg",
+    titlte: "Aku Milikmu",
+  },
+  {
+    image:
+      "https://i.pinimg.com/564x/b1/67/a6/b167a6d5e1a37d9ab23a66b95a2c7e1f.jpg",
+    titlte: "Dewi",
+  },
+  {
+    image:
+      "https://i.pinimg.com/564x/58/74/e1/5874e1591bbd028415378d075103ec65.jpg",
+    titlte: "Hari Bersamanya",
+  },
+];
+
 const Tester = ({
   trackList = tracks,
   includeTags = false,
   includeSearch = false,
   showPlaylist = true,
-  sortTracks = true ,
+  sortTracks = true,
   autoPlayNextTrack = true,
-  artisImage = true,
   customColorScheme = {},
 }) => {
   const [audio, setAudio] = useState(null);
@@ -282,7 +289,7 @@ const Tester = ({
 
   useEffect(() => {
     if (audio != null) {
-      let setAudioEnd;
+      let setAudioEnda
 
       if (looped) {
         setAudioEnd = () => {
@@ -600,41 +607,55 @@ const Tester = ({
                     })}
                   </div>
                 </div>
-                <div className={styles.wrap_genre}></div>
+                <div className={styles.wrap_genre}>
+                  <div>
+                    <h1>Recenly Played</h1>
+                  </div>
+                  <div className={styles.wrap_recent}>
+                    {recenly.map((a, b) => {
+                      return (
+                        <div className={styles.main_recent}>
+                          <Image src={a.image} width={100} height={100} />
+                          <p>{a.titlte}</p>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
               </div>
               <div className={styles.mainhomemusicright}>
                 <div className={styles.playmusic}>
                   <h1>Your Favorite Song</h1>
-                <PlaylistTemplate visibility={showPlaylist}>
-                  {trackList.sort(sortCompare).map((el, index) => {
-                    if (
-                      filter.length === 0 ||
-                      filter.some((filter) => el.tags.includes(filter))
-                    ) {
+                  <PlaylistTemplate visibility={showPlaylist}>
+                    {trackList.sort(sortCompare).map((el, index) => {
                       if (
-                        el.title.toLowerCase().includes(query.toLowerCase())
-                        // el.imageArtis.toLowerCase().includes(query.toLowerCase())
+                        filter.length === 0 ||
+                        filter.some((filter) => el.tags.includes(filter))
                       ) {
-                        playlist.push(index);
-                        return (
-                          <>
-                            {/* <ImageArtis12 imageArtis={imageArtis} /> */}
-                            <PlaylistItem
-                              status={curTrack === index ? "active" : ""}
-                              key={index}
-                              data_key={index}
-                              imageArtis={el.imageArtis}
-                              title={el.title}
-                              src={el.url}
-                              durasi={el.durasi}
-                              onClick={playlistItemClickHandler}
-                            />
-                          </>
-                        );
+                        if (
+                          el.title.toLowerCase().includes(query.toLowerCase())
+                          // el.imageArtis.toLowerCase().includes(query.toLowerCase())
+                        ) {
+                          playlist.push(index);
+                          return (
+                            <>
+                              {/* <ImageArtis12 imageArtis={imageArtis} /> */}
+                              <PlaylistItem
+                                status={curTrack === index ? "active" : ""}
+                                key={index}
+                                data_key={index}
+                                imageArtis={el.imageArtis}
+                                title={el.title}
+                                src={el.url}
+                                durasi={el.durasi}
+                                onClick={playlistItemClickHandler}
+                              />
+                            </>
+                          );
+                        }
                       }
-                    }
-                  })}
-                </PlaylistTemplate>
+                    })}
+                  </PlaylistTemplate>
                 </div>
               </div>
             </div>
@@ -646,37 +667,3 @@ const Tester = ({
 };
 
 export default Tester;
-
-{
-  /* <div className={styles.wrap_chart}>
-<PlaylistTemplate visibility={showPlaylist}>
-  {trackList.sort(sortCompare).map((el, index) => {
-    if (
-      filter.length === 0 ||
-      filter.some((filter) => el.tags.includes(filter))
-    ) {
-      if (
-        el.title.toLowerCase().includes(query.toLowerCase())
-        // el.imageArtis.toLowerCase().includes(query.toLowerCase())
-      ) {
-        playlist.push(index);
-        return (
-          <>
-            <PlaylistItem
-              status={curTrack === index ? "active" : ""}
-              key={index}
-              data_key={index}
-              imageArtis={el.imageArtis}
-              title={el.title}
-              src={el.url}
-              durasi={el.durasi}
-              onClick={playlistItemClickHandler}
-            />
-          </>
-        );
-      }
-    }
-  })}
-</PlaylistTemplate>
-</div> */
-}

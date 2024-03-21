@@ -97,7 +97,7 @@ const tracks = [
 
 const links = [
   { name: "Explore", path: "/", icons: compasIcon },
-  { name: "Genres", path: "/splash", icons: musicIcon },
+  { name: "Genres", path: "/genre", icons: musicIcon },
   { name: "Albums", path: "/", icons: musicIcon2 },
   { name: "Artis", path: "/", icons: micIcon },
   { name: "Tester", path: "/tester", icons: radioIcon },
