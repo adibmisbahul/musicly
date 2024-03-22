@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import  "./home.css";
-import Homepage from "./tester/page"
+import Homepage from "./home/page"
 
 // import HomePage from "../app/search/page";
 
