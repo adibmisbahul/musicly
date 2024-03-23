@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import styles from "./artis.module.css";
+import styles from "./radio.module.css";
 
 import logo from "../assets/logo musicly.png";
 import compasIcon from "../icons/bi--compass-fill.svg";
@@ -52,7 +52,7 @@ import { ImageArtis12 } from "../component/imageArtis";
 import SetingsIcon from "../../../public/setings icon.png";
 import NotifIcon from "../../../public/notif.png";
 import Avatar from "../../../public/avatar.jpeg";
-
+import likeIcon from "../../../public/like icon.svg";
 
 const fmtMSS = (s) => new Date(1000 * s).toISOString().substr(15, 4);
 
@@ -80,7 +80,6 @@ const limit = 3;
 updateTracks(limit).then((updatedTracks) => {
   // console.log("Updated Tracks:", updatedTracks);
 });
-
 
 const tracks = [
   {
@@ -289,7 +288,7 @@ const Tester = ({
 
   useEffect(() => {
     if (audio != null) {
-      let setAudioEnda
+      let setAudioEnda;
 
       if (looped) {
         setAudioEnd = () => {
@@ -554,29 +553,13 @@ const Tester = ({
         </div>
         {/* </div> */}
         <div>
+          {/* <Navigasi /> */}
 
           {/* ///////////main conten///////////// */}
-          <div className={styles.wraphome} id={"styles-3"}>
-            <div className={styles.artissname}>
-             <div>
-             <Image src={"https://i.pinimg.com/564x/0f/58/36/0f58367e1fda58a365698e81836ce1dc.jpg"} alt="" width={1000} height={1000}/>
-             </div>
-            </div>
-            <div className={styles.artissname}>
-             <div>
-             <Image src={"https://i.pinimg.com/564x/0f/58/36/0f58367e1fda58a365698e81836ce1dc.jpg"} alt="" width={1000} height={1000}/>
-             </div>
-            </div>
-            <div className={styles.artissname}>
-             <div>
-             <Image src={"https://i.pinimg.com/564x/0f/58/36/0f58367e1fda58a365698e81836ce1dc.jpg"} alt="" width={1000} height={1000}/>
-             </div>
-            </div>
-            <div className={styles.artissname}>
-             <div>
-             <Image src={"https://i.pinimg.com/564x/0f/58/36/0f58367e1fda58a365698e81836ce1dc.jpg"} alt="" width={1000} height={1000}/>
-             </div>
-            </div>
+          <div className={styles.wrapradio} id={"styles-3"}>
+           <div className={styles.cardradio}>
+            <Image src={"https://i.pinimg.com/564x/2d/11/90/2d1190b1db79d2d5e809352fe6557fca.jpg"} alt="" width={150} height={150}/>
+           </div>
           </div>
         </div>
       </div>

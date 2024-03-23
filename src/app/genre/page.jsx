@@ -99,7 +99,7 @@ const links = [
   { name: "Genres", path: "/genre", icons: musicIcon },
   { name: "Search", path: "/search", icons: musicIcon2 },
   { name: "Artis", path: "/artis", icons: micIcon },
-  { name: "Radio", path: "/", icons: radioIcon },
+  { name: "Radio", path: "/radio", icons: radioIcon },
 ];
 
 const music = [
