@@ -1,7 +1,7 @@
 .item {
   /* background-color: var(--playlistBackground); */
   color: var(--playlistText);
-  text-align: center;
+  text-align: start;
   margin: 5px 0;
   padding: 3px 0;
   cursor: pointer;
@@ -11,10 +11,23 @@
 }
 
 .wrapplaylist{
+  width: 100%;
+  padding-bottom: 2vh;
   display: flex;
+  /* gap: 1vw; */
+  align-items: center;
 
 }
+.satu{
+  width: 20%;
+}
+.dua{
+  width: 60%;
+}
 
+.tiga{
+  width: 20%;
+}
 .imageArtis {
   border-radius: 0.5vw;
   margin-left: 1vw;
@@ -22,7 +35,7 @@
 }
 
 .wrapplaylist .textdurasi{
-  margin-left: 5vw;
+  text-align: left;
 }
 
 .active {

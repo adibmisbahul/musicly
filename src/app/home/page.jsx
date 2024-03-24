@@ -58,7 +58,7 @@ const fmtMSS = (s) => new Date(1000 * s).toISOString().substr(15, 4);
 
 async function fetchDataFromAPI() {
   try {
-    const response = await fetch("http://localhost:1000/tracks");
+    const response = await fetch("http://localhost:5000/users");
     const data = await response.json();
     return data;
   } catch (error) {
@@ -81,10 +81,10 @@ updateTracks(limit).then((updatedTracks) => {
   // console.log("Updated Tracks:", updatedTracks);
 });
 
-
 const tracks = [
   {
-    imageArtis: "https://i.pinimg.com/564x/2d/11/90/2d1190b1db79d2d5e809352fe6557fca.jpg",
+    imageArtis:
+      "https://i.pinimg.com/564x/2d/11/90/2d1190b1db79d2d5e809352fe6557fca.jpg",
     url: "",
     title: "lany-malibu nights",
     durasi: "4.46",
@@ -289,7 +289,7 @@ const Tester = ({
 
   useEffect(() => {
     if (audio != null) {
-      let setAudioEnda
+      let setAudioEnda;
 
       if (looped) {
         setAudioEnd = () => {
