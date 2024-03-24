@@ -85,10 +85,10 @@ updateTracks().then((updatedTracks) => {
 
 const tracks = [
   {
-    imageArtis: "",
+    imageArtis: "https://i.pinimg.com/564x/2d/11/90/2d1190b1db79d2d5e809352fe6557fca.jpg",
     url: "",
-    title: "",
-    durasi: "",
+    title: "lany-malibu nights",
+    durasi: "4.46",
     tags: [""],
   },
   

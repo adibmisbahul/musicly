@@ -47,6 +47,22 @@
       "title": "Bruno Mars",
       "durasi": "6:40",
       "tags": ["dnb"]
+    },
+    {
+      "id":7,
+      "imageArtis": "https://i.pinimg.com/564x/5e/ca/ef/5ecaef8817a8492cad721b81cc69d3f4.jpg",
+      "url": "https://audio.jukehost.co.uk/XYtQrXC7voF5xdQRNSv2doWkrO4gNFBK",
+      "title": "Kiss never let me go",
+      "durasi": "4:18",
+      "tags": ["dnb"]
+    },
+    {
+      "id":8,
+      "imageArtis": "https://i.pinimg.com/564x/c7/6d/04/c76d045642d13df1114b5a42512f1953.jpg",
+      "url": "https://audio.jukehost.co.uk/kgWHC3n5JAkOl9nuAVRGxrJ87qvIn26H",
+      "title": "Enchanced",
+      "durasi": "5:53",
+      "tags": ["dnb"]
     }
   ]
 }

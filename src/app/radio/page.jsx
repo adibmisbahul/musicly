@@ -52,7 +52,6 @@ import { ImageArtis12 } from "../component/imageArtis";
 import SetingsIcon from "../../../public/setings icon.png";
 import NotifIcon from "../../../public/notif.png";
 import Avatar from "../../../public/avatar.jpeg";
-import likeIcon from "../../../public/like icon.svg";
 
 const fmtMSS = (s) => new Date(1000 * s).toISOString().substr(15, 4);
 
@@ -77,16 +76,14 @@ async function updateTracks() {
 
 const limit = 3;
 
-updateTracks(limit).then((updatedTracks) => {
-  // console.log("Updated Tracks:", updatedTracks);
-});
+updateTracks(limit).then((updatedTracks) => {});
 
 const tracks = [
   {
-    imageArtis: "",
+    imageArtis: "https://i.pinimg.com/564x/2d/11/90/2d1190b1db79d2d5e809352fe6557fca.jpg",
     url: "",
-    title: "",
-    durasi: "",
+    title: "lany-malibu nights",
+    durasi: "4.46",
     tags: [""],
   },
 ];
@@ -99,37 +96,13 @@ const links = [
   { name: "Radio", path: "/radio", icons: radioIcon },
 ];
 
-const topArtis = [
-  { name: "The Weekend", Image: heaevenSent },
-  { name: "Chase Atlantic", Image: chaseAtlantic },
-  { name: "Sza", Image: sza },
-  { name: "joji", Image: joji },
-  { name: "Bruno Mars", Image: brunoMars2 },
-  { name: "Lany", Image: lany },
-  { name: "The 1975", Image: the1975 },
-];
-
-const recenly = [
-  {
-    image:
-      "https://i.pinimg.com/564x/0f/58/36/0f58367e1fda58a365698e81836ce1dc.jpg",
-    titlte: "Akad",
-  },
-  {
-    image:
-      "https://i.pinimg.com/564x/b1/67/a6/b167a6d5e1a37d9ab23a66b95a2c7e1f.jpg",
-    titlte: "Aku Milikmu",
-  },
-  {
-    image:
-      "https://i.pinimg.com/564x/b1/67/a6/b167a6d5e1a37d9ab23a66b95a2c7e1f.jpg",
-    titlte: "Dewi",
-  },
-  {
-    image:
-      "https://i.pinimg.com/564x/58/74/e1/5874e1591bbd028415378d075103ec65.jpg",
-    titlte: "Hari Bersamanya",
-  },
+const radio = [
+ {name: "Radio Lany", image: "https://i.pinimg.com/564x/2d/11/90/2d1190b1db79d2d5e809352fe6557fca.jpg", jadwal:"Monday 25 march 10am-1pm"},
+ {name: "Radio Lany", image: "https://i.pinimg.com/564x/2d/11/90/2d1190b1db79d2d5e809352fe6557fca.jpg", jadwal:"Monday 25 march 10am-1pm"},
+ {name: "Radio Lany", image: "https://i.pinimg.com/564x/2d/11/90/2d1190b1db79d2d5e809352fe6557fca.jpg", jadwal:"Monday 25 march 10am-1pm"},
+ {name: "Radio Lany", image: "https://i.pinimg.com/564x/2d/11/90/2d1190b1db79d2d5e809352fe6557fca.jpg", jadwal:"Monday 25 march 10am-1pm"},
+ {name: "Radio Lany", image: "https://i.pinimg.com/564x/2d/11/90/2d1190b1db79d2d5e809352fe6557fca.jpg", jadwal:"Monday 25 march 10am-1pm"},
+ {name: "Radio Lany", image: "https://i.pinimg.com/564x/2d/11/90/2d1190b1db79d2d5e809352fe6557fca.jpg", jadwal:"Monday 25 march 10am-1pm"},
 ];
 
 const Tester = ({
@@ -425,8 +398,6 @@ const Tester = ({
             </div>
           </div>
         </div>
-        {/* </div> */}
-        {/* <div> */}
         <div className={styles.kontolBesar}>
           {includeTags && (
             <TagsTemplate>
@@ -455,7 +426,7 @@ const Tester = ({
               ) {
                 if (
                   el.title.toLowerCase().includes(query.toLowerCase())
-                  // el.imageArtis.toLowerCase().includes(query.toLowerCase())
+                  
                 ) {
                   playlist.push(index);
                   return (
@@ -551,15 +522,34 @@ const Tester = ({
             </PlayerTemplate>
           </div>
         </div>
-        {/* </div> */}
         <div>
-          {/* <Navigasi /> */}
-
+          
           {/* ///////////main conten///////////// */}
           <div className={styles.wrapradio} id={"styles-3"}>
-           <div className={styles.cardradio}>
-            <Image src={"https://i.pinimg.com/564x/2d/11/90/2d1190b1db79d2d5e809352fe6557fca.jpg"} alt="" width={150} height={150}/>
-           </div>
+            {radio.map((a, b) => {
+              return(
+                <div className={styles.cardradio} key={b}>
+                <div className={styles.crleft}>
+                  <Image
+                    src={a.image}
+                    alt=""
+                    width={150}
+                    height={150}
+                  />
+                </div>
+                <div className={styles.crright}>
+                  <div>
+                    <h1>{a.name}</h1>
+                    <p>{a.jadwal}</p>
+                  </div>
+                  <div className={styles.btnwatch}>
+                    <Link href="/streaming">Watch</Link>
+                  </div>
+                </div>
+              </div>
+              )
+            })}
+         
           </div>
         </div>
       </div>
