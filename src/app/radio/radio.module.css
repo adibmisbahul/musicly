@@ -65,6 +65,7 @@
   margin-top: -1vw;
   position: fixed;
   margin-left: 17%;
+  background-color: #000000;
 }
 
 .navleft {
@@ -249,7 +250,7 @@
 
 .crright h1 {
   font-weight: 700;
-  font-size: 2vw;
+  font-size: 1.5vw;
   margin-top: 25px;
 }
 

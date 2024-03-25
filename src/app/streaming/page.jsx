@@ -1,4 +1,6 @@
 "use client";
+import { CldVideoPlayer } from "next-cloudinary";
+import "next-cloudinary/dist/cld-video-player.css";
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
@@ -18,7 +20,6 @@ import pauseBtn from "../icons/material-symbols-light--pause-outline.svg";
 import nextBtn from "../icons/next.svg";
 import shuffleAllBtn from "../icons/shuffle_all.png";
 import shuffleNoneBtn from "../icons/icon-park-outline--shuffle.svg";
-
 
 import { PageTemplate } from "../component/PageTemplate";
 import { TagsTemplate } from "../component/TagsTemplate";
@@ -548,11 +549,29 @@ const Tester = ({
         <div>
           {/* ///////////main conten///////////// */}
           <div className={styles.wrapstreaming} id={"styles-3"}>
-            <div className="video-container">
-              <video controls width="600">
-                <source src="LANY.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
+            <div className={styles.smleft}>
+              <iframe
+                width="650"
+                height="450"
+                src="https://www.youtube.com/embed/LPCXqq5iI0s"
+                title="LANY - 13 (Live at BYE2021)"
+                frameborder="0"
+                allowfullscreen
+                autoPlay
+              />
+              {/*  */}
+              {/* <video width={800} height={550} loop muted autoPlay>
+              <source src="https://www.youtube.com/embed/LPCXqq5iI0s" type="video/mp4" />
+              <track
+                src="https://www.youtube.com/embed/LPCXqq5iI0s"
+                // kind="subtitles"
+                srcLang="en"
+                label="English"
+              />
+            </video> */}
+            </div>
+            <div className={styles.smright}>
+              <input type="text" placeholder="enter to chat" />
             </div>
           </div>
         </div>

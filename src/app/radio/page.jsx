@@ -98,11 +98,11 @@ const links = [
 
 const radio = [
  {name: "Radio Lany", image: "https://i.pinimg.com/564x/2d/11/90/2d1190b1db79d2d5e809352fe6557fca.jpg", jadwal:"Monday 25 march 10am-1pm"},
- {name: "Radio Lany", image: "https://i.pinimg.com/564x/2d/11/90/2d1190b1db79d2d5e809352fe6557fca.jpg", jadwal:"Monday 25 march 10am-1pm"},
- {name: "Radio Lany", image: "https://i.pinimg.com/564x/2d/11/90/2d1190b1db79d2d5e809352fe6557fca.jpg", jadwal:"Monday 25 march 10am-1pm"},
- {name: "Radio Lany", image: "https://i.pinimg.com/564x/2d/11/90/2d1190b1db79d2d5e809352fe6557fca.jpg", jadwal:"Monday 25 march 10am-1pm"},
- {name: "Radio Lany", image: "https://i.pinimg.com/564x/2d/11/90/2d1190b1db79d2d5e809352fe6557fca.jpg", jadwal:"Monday 25 march 10am-1pm"},
- {name: "Radio Lany", image: "https://i.pinimg.com/564x/2d/11/90/2d1190b1db79d2d5e809352fe6557fca.jpg", jadwal:"Monday 25 march 10am-1pm"},
+ {name: "Radio Dewa", image: "https://i.pinimg.com/736x/b1/67/a6/b167a6d5e1a37d9ab23a66b95a2c7e1f.jpg", jadwal:"Coming Soon"},
+ {name: "Radio Payung Teduh", image: "https://i.pinimg.com/564x/0f/58/36/0f58367e1fda58a365698e81836ce1dc.jpg", jadwal:"Coming Soon"},
+ {name: "Radio Sheila On 7", image: "https://i.pinimg.com/564x/58/74/e1/5874e1591bbd028415378d075103ec65.jpg", jadwal:"Coming Soon"},
+ {name: "Radio Wave To Earth", image: "https://i.pinimg.com/564x/1c/85/55/1c8555e13c37740bf3120de7890fafca.jpg", jadwal:"Coming Soon"},
+ {name: "Radio Jkt 48", image: "https://i.pinimg.com/564x/06/b0/1b/06b01b5e85de137b5aaf3d9b5c52d8dd.jpg", jadwal:"Coming Soon"},
 ];
 
 const Tester = ({
