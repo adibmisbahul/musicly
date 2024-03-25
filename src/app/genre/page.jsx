@@ -63,7 +63,7 @@ const fmtMSS = (s) => new Date(1000 * s).toISOString().substr(15, 4);
 
 async function fetchDataFromAPI() {
   try {
-    const response = await fetch("http://localhost:1000/tracks");
+    const response = await fetch("http://localhost:5000/users");
     const data = await response.json();
     return data;
   } catch (error) {
